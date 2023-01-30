@@ -1,0 +1,62 @@
+@import 'mixins';
+@import 'variables';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+
+  main {
+    width: 500px;
+    margin: 15px auto;
+    padding: 30px 20px;
+    background-color: rgb(140, 170, 194);
+    border: 1px solid #9f9f9f;
+    border-radius: 5px;
+    box-shadow: 0 0 3px #9f9f9fb5;
+    color: rgb(47, 48, 78);
+    font-family: Arial, Helvetica, sans-serif;
+
+    /* ====== classes =====*/
+    .flex-container {
+      @include flex;
+    }
+
+    .primary-gap {
+      gap: $primary-gap;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: $primary-margin;
+    }
+
+    form {
+      margin-top: 30px;
+
+      div .inputLineHeight {
+        line-height: 1.8;
+        width: 50%;
+        margin-bottom: $primary-margin;
+      }
+
+      #bodyForm-container {
+
+        .radio-container #female {
+        margin-top: 10px;
+        }
+
+        .radio-container #male {
+          
+        }
+    
+      }
+    }
+  }
+
+ 
+}

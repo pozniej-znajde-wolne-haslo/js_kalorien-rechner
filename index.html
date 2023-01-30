@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>JS Kalorien-Rechner</title>
+</head>
+
+<body>
+  <main>
+    <h1>Kalorien rechner</h1>
+
+    <form>
+      <div class="flex-container primary-gap">
+        <label for="height">Körpergröße</label>
+        <input type="text" id="height" class="inputLineHeight" value="">
+      </div>
+      <div class="flex-container primary-gap">
+        <label for="age">Alter</label>
+        <input type="text" id="age" class="inputLineHeight" value="">
+      </div>
+      <div class="flex-container primary-gap">
+        <label for="weight">Gewicht</label>
+        <input type="text" id="weight" class="inputLineHeight" value="">
+      </div>
+
+      <div id="bodyForm-container" class="flex-container">
+        <label for="bodyForm">Körperbau</label>
+        <div class="radio-container">
+          <input type="radio" name="bodyForm" id="female">
+          <label for="female">weiblich</label>
+        </div>
+        <div class="radio-container">
+          <input type="radio" name="bodyForm" id="male">
+          <label for="male">männlich</label>
+        </div>
+      </div>
+
+      <div class="flex-container primary-gap">
+        <label for="">Arbeits- und Freizeitaktivität</label>
+        <select name="" id="activityLevel">
+          <option value="0.95">schlafen</option>
+          <option value="1.2">nur sitzen oder liegen</option>
+          <option value="1.5">sitzende Tätigkeit mit wenig oder keiner Bewegung in der Freizeit </option>
+          <option value="1.7">sitzende Tätigkeit und nur zeitweise gehen oder stehen</option>
+          <option value="1.9">überwiegend gehen oder stehen</option>
+          <option value="2.2">körperlich anstrengende Arbeit</option>
+        </select>
+      </div>
+
+      <input type="onsubmit" id="btn" value="Submit">
+
+      <div class="results-container">
+        <p>
+          <span>kcal</span>
+          <span>kJ</span></p>
+        <p>
+          <span>Grundumsatz</span>
+          <span id="basalMetRate_inKcal"></span>
+          <span id="basalMetRate_inKJ"></span>
+        </p>
+        <p>
+          <span>Gesamtumsatz</span>
+          <span id="totalDailyEnergyExpenditure_inKcal"></span>
+          <span id="totalDailyEnergyExpenditure_inKJ"></span>
+        </p>
+      </div>
+
+      <p>Das Ergebnis des Rechners sollte nur als Orientierungswert interpretiert werden.</p>
+    </form>
+  </main>
+  
+  <script src="./js/main.js"></script>
+</body>
+</html>
