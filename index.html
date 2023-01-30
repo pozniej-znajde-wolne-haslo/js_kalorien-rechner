@@ -14,20 +14,20 @@
 
     <form>
       <div class="flex-container primary-gap">
-        <label for="height">Körpergröße</label>
+        <label for="height" class="font-bold">Körpergröße</label>
         <input type="text" id="height" class="inputLineHeight" value="">
       </div>
       <div class="flex-container primary-gap">
-        <label for="age">Alter</label>
+        <label for="age" class="font-bold">Alter</label>
         <input type="text" id="age" class="inputLineHeight" value="">
       </div>
       <div class="flex-container primary-gap">
-        <label for="weight">Gewicht</label>
+        <label for="weight" class="font-bold">Gewicht</label>
         <input type="text" id="weight" class="inputLineHeight" value="">
       </div>
 
       <div id="bodyForm-container" class="flex-container">
-        <label for="bodyForm">Körperbau</label>
+        <label for="bodyForm" class="font-bold">Körperbau</label>
         <div class="radio-container">
           <input type="radio" name="bodyForm" id="female">
           <label for="female">weiblich</label>
@@ -38,9 +38,10 @@
         </div>
       </div>
 
-      <div class="flex-container primary-gap">
-        <label for="">Arbeits- und Freizeitaktivität</label>
-        <select name="" id="activityLevel">
+      <div id="activityLevel-container" class="flex-container primary-gap">
+        <label for="" class="font-bold">Arbeits- und Freizeitaktivität</label>
+        <select name="" id="PAL-factor">
+          <option value="" disabled selected hidden>überwiegende Aktivität im Alltag</option>
           <option value="0.95">schlafen</option>
           <option value="1.2">nur sitzen oder liegen</option>
           <option value="1.5">sitzende Tätigkeit mit wenig oder keiner Bewegung in der Freizeit </option>
@@ -50,25 +51,27 @@
         </select>
       </div>
 
-      <input type="onsubmit" id="btn" value="Submit">
+      <input type="button" id="btn" value="Submit">
 
-      <div class="results-container">
-        <p>
-          <span>kcal</span>
-          <span>kJ</span></p>
-        <p>
-          <span>Grundumsatz</span>
-          <span id="basalMetRate_inKcal"></span>
-          <span id="basalMetRate_inKJ"></span>
+      <div id="results-container">
+        <p id="results-description">
+          <span class="col1"></span>
+          <span class="col2">kcal</span>
+          <span class="col3">kJ</span>
         </p>
-        <p>
-          <span>Gesamtumsatz</span>
-          <span id="totalDailyEnergyExpenditure_inKcal"></span>
-          <span id="totalDailyEnergyExpenditure_inKJ"></span>
+        <p class="results-output">
+          <span class="col1">Grundumsatz</span>
+          <span id="basalMetRate_inKcal" class="col2"></span>
+          <span id="basalMetRate_inKJ" class="col3"></span>
+        </p>
+        <p class="results-output">
+          <span class="col1">Gesamtumsatz</span>
+          <span id="totalDailyEnergyExpenditure_inKcal" class="col2"></span>
+          <span id="totalDailyEnergyExpenditure_inKJ" class="col3"></span>
         </p>
       </div>
 
-      <p>Das Ergebnis des Rechners sollte nur als Orientierungswert interpretiert werden.</p>
+      <p id="form_small-print">Das Ergebnis des Rechners sollte nur als Orientierungswert interpretiert werden.</p>
     </form>
   </main>
   

@@ -1,4 +1,32 @@
 @mixin flex {
   display: flex;
   flex-direction: column;
+  gap: $primary-gap;
+}
+
+@mixin results-table-grid {
+  line-height: 1.8;
+  display: grid;
+  grid-template-columns: 60% 15% 25%;
+  grid-template-areas: 
+    'col1 col2 col3' ;
+
+    .col1 { 
+      grid-area: col1; 
+      padding-left: $primary-padding;
+    }
+    .col2 { 
+      grid-area: col2; 
+      padding-left: $primary-padding;
+      border-left: 1px solid rgb(49, 48, 48);
+    }
+    .col3 { 
+      grid-area: col3; 
+      padding-left: $primary-padding;
+      border-left: 1px solid rgb(49, 48, 48);
+    }    
+}
+
+@mixin linear-gradient ($color1, $color2) {
+  background: linear-gradient($color1, $color2);
 }

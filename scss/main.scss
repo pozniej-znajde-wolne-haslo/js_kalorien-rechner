@@ -13,50 +13,122 @@ body {
   main {
     width: 500px;
     margin: 15px auto;
-    padding: 30px 20px;
-    background-color: rgb(140, 170, 194);
+    padding: 30px $secondary-padding;
+    @include linear-gradient (rgb(163, 197, 225), rgb(106, 129, 148));
     border: 1px solid #9f9f9f;
-    border-radius: 5px;
-    box-shadow: 0 0 3px #9f9f9fb5;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 1px #9f9f9fb5;
     color: rgb(47, 48, 78);
     font-family: Arial, Helvetica, sans-serif;
 
-    /* ====== classes =====*/
+    /* ====== class for FLEX =====*/
     .flex-container {
       @include flex;
     }
-
-    .primary-gap {
-      gap: $primary-gap;
-    }
-
+    /* ===========================  */
     h1 {
       text-align: center;
       margin-bottom: $primary-margin;
+      font-size: 30px;
     }
 
     form {
       margin-top: 30px;
 
-      div .inputLineHeight {
-        line-height: 1.8;
-        width: 50%;
-        margin-bottom: $primary-margin;
+      div {
+
+        .font-bold {
+          font-weight: $bold-font;
+          font-size: 18px;
+        }
+
+        .inputLineHeight {
+          line-height: 2;
+          padding-left: $primary-padding;
+          width: 50%;
+          margin-bottom: $primary-margin;
+          background-color: rgba(228, 236, 243, 0.988);
+          border: 1px solid rgba(125, 144, 160, 0.756);
+        }
+
+        .radio-container {
+
+          input {
+            transform: scale(1.5);
+            margin-right: $secondary-margin;
+          }
+        
+          label {
+            color: #000;
+            font-weight: $bold-font;
+          }
+
+          #female {
+            margin-top: $primary-margin;
+          }
+        }
       }
 
-      #bodyForm-container {
+      #activityLevel-container {
+        margin: $primary-margin auto;
 
-        .radio-container #female {
-        margin-top: 10px;
-        }
+        select {
+          padding: $primary-padding;
+          font-size: 15px;
+          background-color: rgba(228, 236, 243, 0.988);
+          border: 1px solid rgba(125, 144, 160, 0.756);
+          border-radius: 10px;
 
-        .radio-container #male {
-          
+          &:first-of-type { color: rgb(49, 48, 48); }
         }
-    
+      }
+
+      #btn {
+        padding: $primary-padding $secondary-padding;
+        display: block;
+        margin: 30px 0 $primary-margin auto;
+        background-color: rgb(198, 107, 42);
+        color: rgb(242, 228, 212);
+        font-size: 16px;
+        font-weight: $bold-font;
+        border: 0;
+        border-radius: 5px;
+        box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.54);
+      }
+    }
+
+    #results-container {
+      box-shadow: 0 0 3px #b5b3b3cf;
+      border: 1px solid #b5b3b3c1;
+      margin-bottom: $primary-margin;
+
+      p#results-description {
+      @include results-table-grid;
+      color: rgba(255, 255, 255, 0.922);
+      font-weight: $bold-font;
+      @include linear-gradient(rgb(83, 156, 215), rgb(51, 104, 148));
+      border-bottom: 2px solid rgba(49, 48, 48, 0.5);
+      }
+
+      p.results-output {
+        @include results-table-grid;
+        font-weight: $bold-font;
+        background-color: #f7eaea;
+        border-top: 1px solid rgb(49, 48, 48);
+      }
+    }
+
+    p#form_small-print {
+      color: #000;
+      padding-left: $primary-padding;
+      display: flex;
+      gap: 5px;
+
+      &::before {
+        content: "* ";
       }
     }
   }
-
- 
 }
+
+
