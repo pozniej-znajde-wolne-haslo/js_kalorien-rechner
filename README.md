@@ -6,4 +6,4 @@ A simple tool to calculate your recommended kcal-intake depending on your averag
 
 It uses Vanilla JavaScript and Sass.
 
-![Preview] (.js_kalorien-rechner/public/kcal-calculator.png)
+![Preview](./public/kcal-calculator.png)
