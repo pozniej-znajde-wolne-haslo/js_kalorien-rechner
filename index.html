@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/style.css">
+  <script src="./js/main.js" defer></script>
   <title>JS Kalorien-Rechner</title>
 </head>
 
@@ -16,15 +17,15 @@
     <form>
       <div class="flex-container primary-gap">
         <label for="height" class="font-bold">Körpergröße</label>
-        <input type="text" id="height" class="inputLineHeight" value="">
+        <input type="text" id="height" class="inputTop" value="">
       </div>
       <div class="flex-container primary-gap">
         <label for="age" class="font-bold">Alter</label>
-        <input type="text" id="age" class="inputLineHeight" value="">
+        <input type="text" id="age" class="inputTop" value="">
       </div>
       <div class="flex-container primary-gap">
         <label for="weight" class="font-bold">Gewicht</label>
-        <input type="text" id="weight" class="inputLineHeight" value="">
+        <input type="text" id="weight" class="inputTop" value="">
       </div>
 
       <div id="bodyForm-container" class="flex-container">
@@ -75,8 +76,6 @@
       <p id="form_small-print">Das Ergebnis des Rechners sollte nur als Orientierungswert interpretiert werden.</p>
     </form>
   </main>
-
-  <script src="./js/main.js"></script>
 </body>
 
 </html>
