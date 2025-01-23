@@ -13,26 +13,36 @@ const bmrKJ = document.getElementById('basalMetRate_inKJ');
 const tdeeKcal = document.getElementById('totalDailyEnergyExpenditure_inKcal');
 const tdeeKJ = document.getElementById('totalDailyEnergyExpenditure_inKJ');
 
+function calculateBMR_and_TDEE(event) {
+  event.preventDefault();
 
-function calculateBMR_and_TDEE (event) {
-
-  event.preventDefault(); 
-
-  let inputHeight = (height.value).replace(",", "").replace(".", "");
+  let inputHeight = height.value.replace(',', '').replace('.', '');
   /* oder wenn kleiner als 3 dann * 100 */
   let bmr;
   let tdee;
 
-  if (!(height.value && age.value && weight.value && (female.checked || male.checked) && factorPAL.value)) {
-    window.alert("Überprüfen Sie bitte Ihre Angaben")
+  if (
+    !(
+      height.value &&
+      age.value &&
+      weight.value &&
+      (female.checked || male.checked) &&
+      factorPAL.value
+    )
+  ) {
+    window.alert('Überprüfen Sie bitte Ihre Angaben');
   }
 
   if (female.checked) {
-    bmr = 664.7 + (13.7 * weight.value) + (5 * inputHeight) - (6.8 * age.value);
-    tdee = (664.7 + (13.7 * weight.value) + (5 * inputHeight) - (6.8 * age.value)) * factorPAL.value;
+    bmr = 655.1 + 9.6 * weight.value + 1.8 * inputHeight - 4.7 * age.value;
+    tdee =
+      (655.1 + 9.6 * weight.value + 1.8 * inputHeight - 4.7 * age.value) *
+      factorPAL.value;
   } else {
-    bmr = 655.1 + (9.6 * weight.value) + (1.8 * inputHeight) - (4.7 * age.value);
-    tdee = (655.1 + (9.6 * weight.value) + (1.8 * inputHeight) - (4.7 * age.value)) * factorPAL.value;
+    bmr = 664.7 + 13.7 * weight.value + 5 * inputHeight - 6.8 * age.value;
+    tdee =
+      (664.7 + 13.7 * weight.value + 5 * inputHeight - 6.8 * age.value) *
+      factorPAL.value;
   }
 
   bmrKcal.innerHTML = bmr.toFixed(0);
@@ -41,5 +51,4 @@ function calculateBMR_and_TDEE (event) {
   tdeeKJ.innerHTML = (tdee * 4.184).toFixed(0);
 }
 
-submitBtn.addEventListener("click", calculateBMR_and_TDEE);
-
+submitBtn.addEventListener('click', calculateBMR_and_TDEE);
